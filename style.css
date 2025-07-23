@@ -1,0 +1,155 @@
+.page {
+  width: 100vw;
+  height: 150vh;
+  border: 1px solid red;
+  border-radius: 15px;
+}
+
+nav ul li {
+  display: inline;
+  align-items: center;
+}
+
+#page1 {
+  background: orange
+}
+
+#page2 {
+  background: green
+}
+
+#page3 {
+  background: brown
+}
+
+/*CSS for responsive menu*/
+#hamIcon {
+  display: none;
+}
+
+@media (max-width:800px) {
+
+  /*make a menu items vertical*/
+  nav ul li {
+    display: block;
+  }
+
+  /* unhide menu icon */
+  #hamIcon {
+    display: block;
+  }
+
+  /*hide the menu item list*/
+  nav ul {
+    display: none;
+  }
+}
+
+/*to unhide menu items*/
+.menuShow {
+  display: block;
+}
+
+* {
+  text-align: center;
+}
+
+ul {
+  list-style-position: inside;
+  /* make the 'dot' on the lists closer to each other */
+  padding-left: 0;
+}
+
+ul,
+li {
+  margin-bottom: 20px;
+}
+
+body {
+  background-image: url("images/jungle_background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+fieldset {
+  width: 80%;
+  /* Width as percentage */
+  max-width: 800px;
+  /* Optional: max limit for large screens */
+  margin: auto;
+  /* Horizontal centering */
+  height: 20%;
+
+  max-height: 300px;
+
+
+  border: 5px solid #7B5E57;
+  border-radius: 10px;
+  background-color: #E8D8C3;
+}
+
+#trexheadId {
+  position: absolute;
+  width: 10vw;
+  max-width: 80px;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+#gamebox {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  border: 5px solid #2E4D34;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 10px;
+  background-image: url("images/jungle-cartoon-background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.fun-fact-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: #E8D8C3;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  width: 80%;
+}
+
+.fact-text {
+  flex: 1;
+}
+
+.fact-image img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.dino-node {
+  margin: 2rem auto;
+  width: 80%;
+  border: 2px solid #7B5E57;
+  border-radius: 12px;
+  background: #E8D8C3;
+  padding: 1rem;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.dino-info {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.dino-node:focus-within .dino-info {
+  max-height: 640px;
+  opacity: 1;
+}

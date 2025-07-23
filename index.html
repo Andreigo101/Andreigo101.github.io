@@ -1,10 +1,146 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
-    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Rex</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    <p>Andreigo, 241220U</p>
+    <header>
+        <h1>The Mighty T-Rex</h1>
+    </header>
+    <nav> <!--menu system-->
+        <!--hamburger icon for mobile-->
+        <button id="hamIcon">Open Menu</button>
+        <ul>
+            <li><button id="page1btn">Fun facts about the T-Rex</button></li>
+            <li><button id="page2btn">Tyrannosaurid Family</button></li>
+            <li><button id="page3btn">Famous T-Rex specimens</button></li>
+        </ul>
+    </nav>
+    <main id="pagecontainer">
+        <section class="page" id="page1">
+            <h2>Fun Facts</h2>
+            <article class="fun-fact-block">
+                <div class="fact-text">
+                    <h2>Fun Facts About T. rex</h2>
+                    <ul>
+                        <li>T. rex had banana-shaped teeth up to 30 cm long.</li>
+                        <li>It had one of the most powerful bite forces ever recorded.</li>
+                        <li>Its sense of smell was better than most modern animals.</li>
+                    </ul>
+                </div>
+                <div class="fact-image">
+                    <img src="images/t-rex skull.jpg" alt="T. rex skull showing teeth">
+                </div>
+            </article>
+
+            <article class="fun-fact-block">
+                <div class="fact-image">
+                    <img src="images/t-rex-running.jpg" alt="T. rex running">
+                </div>
+                <div class="fact-text">
+                    <h2>More T. rex Facts</h2>
+                    <ul>
+                        <li>Ran up to 20 km/h at full speed.</li>
+                        <li>Only had two fingers per hand.</li>
+                        <li>Lived 68-66 million years ago.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article>
+                <h1>MCQ Quiz</h1>
+                <fieldset>
+                    <legend>1. What does the name “Tyrannosaurus rex” mean?</legend>
+                    <input type="radio" name="q1" value="Mighty predator king"> Mighty predator king
+                    <input type="radio" name="q1" value="Tyrant lizard king"> Tyrant lizard king
+                    <input type="radio" name="q1" value="Dinosaur of terror"> Dinosaur of terror
+                    <input type="radio" name="q1" value="Ancient hunter"> Ancient hunter
+                </fieldset>
+                <fieldset>
+                    <legend>2. How long could an adult T. rex grow?</legend>
+                    <input type="radio" name="q2" value="About 12 meters"> About 12 meters
+                    <input type="radio" name="q2" value="About 10 meters"> About 10 meters
+                    <input type="radio" name="q2" value="About 16 meters"> About 16 meters
+                    <input type="radio" name="q2" value="About 14 meters"> About 14 meters
+                </fieldset>
+                <fieldset>
+                    <legend>3. What is the name of the most complete T. rex fossil ever?</legend>
+                    <input type="radio" name="q3" value="Max"> Max
+                    <input type="radio" name="q3" value="King"> King
+                    <input type="radio" name="q3" value="Sue"> Sue
+                    <input type="radio" name="q3" value="Rexy"> Rexy
+                </fieldset>
+                <fieldset>
+                    <legend>4. Which dinosaur is closely related to T. rex?</legend>
+                    <input type="radio" name="q4" value="Triceratops"> Triceratops
+                    <input type="radio" name="q4" value="Stegosaurus"> Stegosaurus
+                    <input type="radio" name="q4" value="Brachiosaurus"> Brachiosaurus
+                    <input type="radio" name="q4" value="Tarbosaurus"> Tarbosaurus
+                </fieldset>
+                <button id="btnSubmit">Submit Quiz</button>
+                <h3 id="scorebox">Not submitted</h3>
+        </section>
+        </article>
+
+        <section class="page" id="page2">
+            <h2>The T-Rex Family</h2>
+            <article>
+                <div class="dino-node">
+                    <button class="dino-toggle">Tarbosaurus</button>
+                    <div class="dino-info">
+                        <img src="images/tarbosaurus.jpg" alt="Tarbosaurus">
+                        <p>Lived in Asia during the late Cretaceous.</p>
+                        <p>Closely related to T. rex.</p>
+                        <a href="https://en.wikipedia.org/wiki/Tarbosaurus" target="_blank">Read more about
+                            Tarbosaurus</a>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="dino-node">
+                    <button class="dino-toggle">Daspletosaurus</button>
+                    <div class="dino-info">
+                        <img src="images/daspletosaurus.jpeg" alt="Tarbosaurus">
+                        <p>Daspletosaurus means "frightful lizard."</p>
+                        <p>Lived in North America about 76 million years ago.</p>
+                        <a href="https://en.wikipedia.org/wiki/Daspletosaurus" target="_blank">Read more about
+                            Daspletosaurus</a>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="dino-node">
+                    <button class="dino-toggle">Albertosaurus</button>
+                    <div class="dino-info">
+                        <img src="images/albertosaurus.jpeg" alt="Tarbosaurus">
+                        <p>Albertosaurus was smaller and faster than T. rex.</p>
+                        <p>It lived in what is now Canada during the Late Cretaceous.</p>
+                        <a href="https://en.wikipedia.org/wiki/Albertosaurus" target="_blank">Read more about Albertosaurus</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="page" id="page3">
+            <h2>Famous Specimens</h2>
+            <article></article>
+        </section>
+
+        <br>
+
+        <section id="gamebox">
+            <h2 id="scorebox2"></h2>
+            <img id="trexheadId" src="images/t-rex-head.png" alt="image of a t-rex head">
+        </section>
+
+
+    </main>
 </body>
+
 </html>
