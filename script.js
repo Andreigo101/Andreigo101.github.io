@@ -17,24 +17,22 @@ page1btn.addEventListener("click", function () {
     page1.style.display = "block";
 });
 page2btn.addEventListener("click", function () {
-    hideall(); //we don't know which page is shown, so hideall
+    hideall(); 
     page2.style.display = "block";
 });
 page3btn.addEventListener("click", function () {
-    hideall(); //we don't know which page is shown, so hideall
+    hideall(); 
     page3.style.display = "block";
 });
 hideall(); //call hideall function to hide all pages
 
 /*JS for hamMenu */
-//get the "open menu" button (meant for hamIcon)
+//get the "open menu" button (for hamIcon)
 const hamBtn = document.querySelector("#hamIcon");
 //connect hamBtn click to toggleMenus function
 hamBtn.addEventListener("click", toggleMenus);
 //get the menuItem list
 const menuItemsList = document.querySelector("nav ul");
-/*toggle, just like light switch, off becomes on, on becomes off*/
-/*if menu is shown, hide it, if hidden, show it*/
 function toggleMenus() {
     //if menuItemsList dont have the class "menuShow", add the class, else remove class
     if (menuItemsList.classList.contains("menuShow")) {
@@ -45,6 +43,10 @@ function toggleMenus() {
         menuItemsList.classList.add("menuShow");
     }
 }
+
+const btnSubmit = document.querySelector("#btnSubmit");
+const btnResetGame = document.querySelector("#btnResetGame");
+const scorebox = document.querySelector("#scorebox");
 
 const trexheadId = document.getElementById("trexheadId");
 function GetRandom(min, max) {
@@ -58,7 +60,7 @@ function MoveTrexhead() {
 var movetrexItvId = setInterval(MoveTrexhead, 700);
 
 const scoreBox = document.getElementById("scorebox2");
-const popAudio = new Audio("audio/popsound.mp3")
+const popAudio = new Audio("audio/popsound.mp3");
 var score = 0; //to track how many clicks
 function trexheadCatch() {
     //increases score after clicking
@@ -70,30 +72,68 @@ function trexheadCatch() {
 //link t-rex head to mouseclick to trexheadCatch function
 trexheadId.addEventListener("click", trexheadCatch);
 
-const btnSubmit = document.querySelector("#btnSubmit");
+btnResetGame.addEventListener("click", function () {
+    score = 0;
+    scoreBox.innerHTML = "Score: 0";
+    // Stop previous movement
+    clearInterval(movetrexItvId);
+    // Restart movement
+    movetrexItvId = setInterval(MoveTrexhead, 700);
+});
+
+const btnReset = document.querySelector("#btnReset");
+
+// Event listener for Submit Quiz
 btnSubmit.addEventListener("click", CheckAns);
-const scorebox = document.querySelector("#scorebox");
-var q1, q2, score = 0;
+
+// Event listener for Reset Quiz
+btnReset.addEventListener("click", ResetQuiz);
+
+let quizScore = 0;
+
 function CheckAns() {
-    score = 0; //reset score to 0, check ans and give score if correct
+    quizScore = 0;
     CheckOneAns(1, "Tyrant lizard king");
     CheckOneAns(2, "About 12 meters");
     CheckOneAns(3, "Sue");
     CheckOneAns(4, "Tarbosaurus");
-    scorebox.innerHTML = "Score:" + score;
+    scorebox.innerHTML = "Score: " + quizScore; //update score display
 }
 
 function CheckOneAns(qNo, CorrAns) {
-    //read the value of the selected radio button for q4
-    cssSel = "input[name='q" + qNo + "']:checked";
-    qTemp = document.querySelector(cssSel).value;
-    console.log(qTemp); //check q4 value retrieved
-    if (qTemp == CorrAns) score++;
+    const cssSel = "input[name='q" + qNo + "']:checked";
+    const selected = document.querySelector(cssSel);
+    if (!selected) return; // skip if nothing selected
+    if (selected.value == CorrAns) quizScore++; // increment if correct
 }
 
-document.querySelectorAll('.dino-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
+function ResetQuiz() {
+    // Uncheck all radio buttons
+    const allRadios = document.querySelectorAll("input[type='radio']");
+    allRadios.forEach(function (r) {
+        r.checked=false;
+    });
+
+    // Clear score text
+    scorebox.innerHTML = "Not submitted"; // reset score display
+    
+    // Reset score variable
+    quizScore = 0;
+}
+
+const dinoToggles = document.querySelectorAll('.dino-toggle');
+dinoToggles.forEach(function (btn) {
+    btn.addEventListener('click', function() {
         const node = btn.closest('.dino-node');
-        node.classList.toggle('active');
+        node.classList.toggle('active');  // show or hide dino info
     });
 });
+
+const sprite = document.getElementById("trexSprite");
+const factContainer = document.getElementById("factBoxContainer");
+
+// toggle fact box visibility when sprite is clicked
+sprite.addEventListener("click", function() {
+   factContainer.classList.toggle("show");
+});
+

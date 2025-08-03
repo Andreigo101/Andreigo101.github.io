@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T-Rex</title>
     <link href="style.css" type="text/css" rel="stylesheet">
@@ -23,9 +23,9 @@
         </ul>
     </nav>
     <main id="pagecontainer">
-        <section class="page" id="page1">
+        <section class="page" id="page1"> <!--first page about T-rex fun facts-->
             <h2>Fun Facts</h2>
-            <article class="fun-fact-block">
+            <article class="fun-fact-block"> <!--Sections showing fun facts-->
                 <div class="fact-text">
                     <h2>Fun Facts About T. rex</h2>
                     <ul>
@@ -35,7 +35,7 @@
                     </ul>
                 </div>
                 <div class="fact-image">
-                    <img src="images/t-rex skull.jpg" alt="T. rex skull showing teeth">
+                    <img src="images/t-rex-skull.jpg" alt="T. rex skull showing teeth">
                 </div>
             </article>
 
@@ -54,7 +54,7 @@
             </article>
 
             <article>
-                <h1>MCQ Quiz</h1>
+                <h2>MCQ Quiz</h2> <!--Quiz about the T-rex-->
                 <fieldset>
                     <legend>1. What does the name “Tyrannosaurus rex” mean?</legend>
                     <input type="radio" name="q1" value="Mighty predator king"> Mighty predator king
@@ -84,17 +84,21 @@
                     <input type="radio" name="q4" value="Tarbosaurus"> Tarbosaurus
                 </fieldset>
                 <button id="btnSubmit">Submit Quiz</button>
+                <button id="btnReset">Reset Quiz</button>
                 <h3 id="scorebox">Not submitted</h3>
+            </article>
         </section>
-        </article>
 
-        <section class="page" id="page2">
-            <h2>The T-Rex Family</h2>
+        <section class="page" id="page2"> <!--Page about the T-rex family-->
+            <header>
+                <h2>The T-Rex Family</h2>
+            </header>
             <article>
-                <div class="dino-node">
+                <h3>Tarbosaurus</h3>
+                <div class="dino-node"> <!--Each dinosaur has it's own dedicated section-->
                     <button class="dino-toggle">Tarbosaurus</button>
                     <div class="dino-info">
-                        <img src="images/tarbosaurus.jpg" alt="Tarbosaurus">
+                        <img class="dino-img" src="images/tarbosaurus.jpg" alt="Tarbosaurus">
                         <p>Lived in Asia during the late Cretaceous.</p>
                         <p>Closely related to T. rex.</p>
                         <a href="https://en.wikipedia.org/wiki/Tarbosaurus" target="_blank">Read more about
@@ -103,10 +107,11 @@
                 </div>
             </article>
             <article>
+                <h3>Daspletosaurus</h3>
                 <div class="dino-node">
                     <button class="dino-toggle">Daspletosaurus</button>
                     <div class="dino-info">
-                        <img src="images/daspletosaurus.jpeg" alt="Tarbosaurus">
+                        <img class="dino-img" src="images/daspletosaurus.jpeg" alt="Daspletosaurus">
                         <p>Daspletosaurus means "frightful lizard."</p>
                         <p>Lived in North America about 76 million years ago.</p>
                         <a href="https://en.wikipedia.org/wiki/Daspletosaurus" target="_blank">Read more about
@@ -115,32 +120,123 @@
                 </div>
             </article>
             <article>
+                <h3>Albertosaurus</h3>
                 <div class="dino-node">
                     <button class="dino-toggle">Albertosaurus</button>
                     <div class="dino-info">
-                        <img src="images/albertosaurus.jpeg" alt="Tarbosaurus">
+                        <img class="dino-img" src="images/albertosaurus.jpeg" alt="Albertosaurus">
                         <p>Albertosaurus was smaller and faster than T. rex.</p>
-                        <p>It lived in what is now Canada during the Late Cretaceous.</p>
-                        <a href="https://en.wikipedia.org/wiki/Albertosaurus" target="_blank">Read more about Albertosaurus</a>
+                        <p>Albertosaurus lived in what is now Canada during the Late Cretaceous.</p>
+                        <a href="https://en.wikipedia.org/wiki/Albertosaurus" target="_blank">Read more about
+                            Albertosaurus</a>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h3>Gorgosaurus</h3>
+                <div class="dino-node">
+                    <button class="dino-toggle">Gorgosaurus</button>
+                    <div class="dino-info">
+                        <img class="dino-img" src="images/gorgosaurus.jpg" alt="Gorgosaurus">
+                        <p>Gorgosaurus is believed to have hunted in packs.</p>
+                        <p>Gorgosaurus lived in lush floodplain envrionments.</p>
+                        <a href="https://en.wikipedia.org/wiki/Gorgosaurus" target="_blank">Read more about
+                            Gorgosaurus</a>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h3>Dryptosaurus</h3>
+                <div class="dino-node">
+                    <button class="dino-toggle">Dryptosaurus</button>
+                    <div class="dino-info">
+                        <img class="dino-img" src="images/dryptosaurus.jpeg" alt="Dryptosaurus">
+                        <p>Dryptosaurus is one of the oldest theropods in the Cretaceous.</p>
+                        <p>Dryptosaurus means "tearing lizard".</p>
+                        <a href="https://en.wikipedia.org/wiki/Dryptosaurus" target="_blank">Read more about
+                            Dryptosaurus</a>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <h3>Guanlong</h3>
+                <div class="dino-node">
+                    <button class="dino-toggle">Guanlong</button>
+                    <div class="dino-info">
+                        <img class="dino-img" src="images/guanlong.jpeg" alt="Guanlong">
+                        <p>Guanlong was an ancestor to T-Rex, preceding its appearance by 90 million years.</p>
+                        <p>One of the smallest Tyrannosaurids at 3 meters long.</p>
+                        <a href="https://en.wikipedia.org/wiki/Guanlong" target="_blank">Read more about
+                            Guanlong</a>
                     </div>
                 </div>
             </article>
         </section>
 
-        <section class="page" id="page3">
+        <section class="page" id="page3"> <!--Page about T-rex specimens-->
             <h2>Famous Specimens</h2>
-            <article></article>
+            <article>
+                <div class="dino-node">
+                    <h3>Sue the T-Rex</h3>
+                    <div class="video-wrapper"> <!--Video about Sue the T-rex-->
+                        <iframe class="t-rex-video" src="https://www.youtube.com/embed/magkk1Z54Ms" title="Sue the T-Rex" allowfullscreen></iframe>    
+                    </div>
+                    <div>
+                        <p>The most complete T-Rex fossil ever found (90% complete).</p>
+                        <p>Discovered in 1990 in South Dakota.</p>
+                        <a href="https://en.wikipedia.org/wiki/Sue_(dinosaur)" target="_blank">Learn More About Sue</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="fossil-sprite-gallery"> <!--CSS Sprite of a T-rex Fossil-->
+                <h2>Stan the T-rex (click to find out more!)</h2>
+                <div class="sprite-container">
+                    <div class="trex-sprite" id="trexSprite"></div>
+                </div>
+                <div class="fact-box-container" id="factBoxContainer"> <!--Facts about a T-rex Fossil-->
+                    <div class="fact-box">
+                        <h4>T-Rex Tail</h4>
+                        <ul>
+                            <li>The tail helped balance the massive body during movement.</li>
+                            <li>It acted as a counterweight to the heavy head.</li>
+                            <li>The tail contributed to quick turning while hunting prey.</li>
+                        </ul>
+                    </div>
+                    <div class="fact-box">
+                        <h4>T-Rex Body</h4>
+                        <ul>
+                            <li>Massive rib cage housed powerful lungs and vital organs.</li>
+                            <li>Muscular legs supported its large frame and enabled running.</li>
+                            <li>Its body was covered in scales, possibly with some proto-feathers.</li>
+                        </ul>
+                    </div>
+                    <div class="fact-box">
+                        <h4>T-Rex Head</h4>
+                        <ul>
+                            <li>Strongest bite force of any land animal ever recorded.</li>
+                            <li>Excellent vision with forward-facing eyes for depth perception.</li>
+                            <li>Large olfactory bulbs allowed an exceptional sense of smell.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
         </section>
 
         <br>
 
-        <section id="gamebox">
-            <h2 id="scorebox2"></h2>
+        <section id="gamebox">  <!--Simple minigame on clicking a T-rex-->
+            <h2 id="scorebox2">T-rex Clicking Game</h2>
             <img id="trexheadId" src="images/t-rex-head.png" alt="image of a t-rex head">
         </section>
 
-
+        <div class="game-reset-container">
+            <button id="btnResetGame">Reset Game</button>
+        </div>
     </main>
+
+    <header>QR Code for mobile</header>
+    <footer>Placeholder</footer>
 </body>
 
 </html>
